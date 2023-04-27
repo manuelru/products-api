@@ -23,8 +23,9 @@ export class ProductsService {
     return this.productsRepository.find();
   }
 
-  findOne(id: number) {
-    return `This action returns a #${id} product`;
+  findOne(id: string) {
+    const menu = this.productsRepository.findOne({ where: {id}});
+    return menu;
   }
 
   update(id: number, updateProductDto: UpdateProductDto) {
